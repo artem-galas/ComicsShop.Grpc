@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "ComicsShop.Grpc": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5076;https://localhost:7234",
+      "environmentVariables": {
+      }
+    }
+  }
+}

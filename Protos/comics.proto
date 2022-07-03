@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option csharp_namespace = "ComicsShop.Grpc";
+
+package comics;
+
+service ComicsServiceRpc {
+  rpc GetList(ComicsListRequest) returns (ComicsListReply);
+  rpc GetById(ComicsIdRequest) returns (ComicsReply);
+  rpc Update(ComicsUpdateRequest) returns (ComicsReply);
+  rpc Delete(ComicsIdRequest) returns (EmptyReply);
+  rpc Create(CreateComicsRequest) returns (ComicsReply);
+}
+
+message ComicsIdRequest {
+  string id = 1;
+}
+
+message ComicsUpdateRequest {
+  string id = 1;
+  double price = 2;
+  string title = 3;
+  string image = 4;
+  string description = 5;
+}
+
+message ComicsListRequest {}
+message ComicsListReply {
+  repeated ComicsReply comics = 1;
+}
+
+message ComicsReply {
+  string id = 1;
+  double price = 2;
+  string title = 3;
+  string image = 4;
+  string description = 5;
+}
+
+message CreateComicsRequest {
+  double price = 2;
+  string title = 3;
+  string image = 4;
+  string description = 5;
+}
+
+message EmptyReply {}
